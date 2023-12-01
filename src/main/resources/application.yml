@@ -1,0 +1,34 @@
+server:
+  port: 8081  #La porta del server HTTP
+
+spring:
+  application:
+    name: trupia  #Nome dell'applicazione
+
+  # Configurazione della connessione al database
+  datasource:
+    url: jdbc:mysql://localhost:3306/sosor?useSSL=false&serverTimezone=UTC  # URL del database MySQL
+    username:   #Nome utente
+    password:   #Password
+
+  #Configurazione JPA per la gestione dell ORM
+  jpa:
+    hibernate:
+      ddl-auto: update  #aggiornamento automatico in update
+    properties:
+      dialect: org.hibernate.dialect.MySQLDialect  # Dialetto del db per Hibernate
+    show-sql: true  # Per visualizzare le query eseguite da hibernate nella console
+    open-in-view: false
+
+# configurazione dei livelli di logging per registrare informazioni specifiche
+logging:
+  level:
+    it.it.fabriziotrupia.trupia: info
+    org:
+      springframework: info
+      hibernate.type.descriptor.sql.BasicBinder: trace
+
+
+
+
+
